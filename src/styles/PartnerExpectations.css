@@ -1,0 +1,308 @@
+/* ── Partner Expectations — Fully Responsive ──────────────── */
+.partner__grid {
+  display: grid;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.partner__column-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.partner__column-icon {
+  font-size: 1.3rem;
+}
+
+/* Looking For */
+.partner__criteria-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.partner__criteria {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.partner__criteria::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-gold), var(--color-rose));
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transition: opacity var(--duration-md);
+}
+
+.partner__criteria:hover::before {
+  opacity: 1;
+}
+
+.partner__criteria-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-gold-soft);
+  border-radius: var(--radius-sm);
+}
+
+.partner__criteria-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 2px;
+}
+
+.partner__criteria-value {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* Personality traits */
+.partner__traits-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.partner__traits-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.partner__trait-chip {
+  padding: 0.3rem 0.7rem;
+  background: linear-gradient(135deg, var(--color-primary-soft), var(--color-rose-soft));
+  border: 1px solid rgba(139, 26, 60, 0.08);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: all var(--duration-md) var(--ease-out);
+  cursor: default;
+}
+
+.partner__trait-chip:hover {
+  background: rgba(139, 26, 60, 0.1);
+  border-color: var(--color-primary);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: var(--shadow-sm);
+}
+
+/* What I Bring */
+.partner__bring-list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.partner__bring-card {
+  padding: var(--space-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-md) var(--ease-out);
+}
+
+.partner__bring-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-rose));
+  transition: all var(--duration-md) var(--ease-out);
+  transform: translateX(-50%);
+}
+
+.partner__bring-card:hover::after {
+  width: 80%;
+}
+
+.partner__bring-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.partner__bring-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.partner__bring-heading {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.partner__bring-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Open Note */
+.partner__note {
+  text-align: center;
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, var(--color-surface-warm), var(--color-bg-warm));
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-glow);
+}
+
+.partner__note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), var(--color-rose), transparent);
+}
+
+.partner__note-text {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+/* ── Breakpoints ─────────────────────────────────────────── */
+@media (min-width: 480px) {
+  .partner__column-title {
+    font-size: 1.4rem;
+  }
+
+  .partner__column-icon {
+    font-size: 1.5rem;
+  }
+
+  .partner__criteria {
+    padding: var(--space-lg);
+  }
+
+  .partner__criteria-icon {
+    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+  }
+
+  .partner__criteria-label {
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+  }
+
+  .partner__criteria-value {
+    font-size: 0.95rem;
+  }
+
+  .partner__trait-chip {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .partner__traits-list {
+    gap: var(--space-sm);
+  }
+
+  .partner__traits-title {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .partner__bring-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .partner__bring-heading {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .partner__bring-desc {
+    font-size: 0.9rem;
+  }
+
+  .partner__bring-card {
+    padding: var(--space-xl);
+  }
+
+  .partner__note {
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+  }
+
+  .partner__note-text {
+    font-size: 1.08rem;
+  }
+
+  .partner__criteria-list {
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .partner__grid {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .partner__column-title {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+  }
+}
+
+@media (min-width: 768px) {
+  .partner__bring-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partner__bring-icon {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .partner__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+  }
+}

@@ -1,0 +1,224 @@
+/* ── About Section — Fully Responsive ─────────────────────── */
+.about__grid {
+  display: grid;
+  gap: var(--space-2xl);
+}
+
+.about__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: var(--color-primary);
+  line-height: 1.7;
+  padding: var(--space-lg) var(--space-md);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-bottom: var(--space-lg);
+  background: linear-gradient(90deg, var(--color-gold-soft), transparent);
+  position: relative;
+}
+
+.about__quote::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-gold);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.about__paragraph {
+  margin-bottom: var(--space-lg);
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+
+.about__friend-quotes {
+  margin-top: var(--space-xl);
+}
+
+.about__fq-heading {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.about__fq-heading::before {
+  content: '💬';
+  font-size: 1rem;
+}
+
+.about__fq-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.about__fq-card {
+  background: var(--color-surface-warm);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: all var(--duration-md) var(--ease-out);
+  position: relative;
+}
+
+.about__fq-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-gold), var(--color-rose));
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  opacity: 0;
+  transition: opacity var(--duration-md) var(--ease-out);
+}
+
+.about__fq-card:hover {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+.about__fq-card:hover::before {
+  opacity: 1;
+}
+
+.about__fq-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  line-height: 1.7;
+}
+
+.about__fq-name {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  letter-spacing: 0.5px;
+}
+
+/* Personality Traits */
+.about__traits-heading {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.about__traits-heading::before {
+  content: '✨';
+}
+
+.about__traits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.about__trait-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  transition: all var(--duration-md) var(--ease-out);
+  cursor: default;
+}
+
+.about__trait-card:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.about__trait-icon {
+  font-size: 1.3rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-gold-soft);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.about__trait-label {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ── Tablet ──────────────────────────────────────────────── */
+@media (min-width: 480px) {
+  .about__traits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .about__trait-icon {
+    font-size: 1.6rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .about__paragraph {
+    font-size: 1.02rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .about__fq-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about__quote {
+    padding: var(--space-xl) var(--space-xl);
+  }
+
+  .about__quote::before {
+    font-size: 4rem;
+    left: 15px;
+  }
+
+  .about__fq-heading,
+  .about__traits-heading {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about__grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .about__traits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__trait-card {
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+  }
+}

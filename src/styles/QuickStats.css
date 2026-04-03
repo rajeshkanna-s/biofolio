@@ -1,0 +1,159 @@
+/* ── Quick Stats — Fully Responsive ───────────────────────── */
+.quick-stats {
+  padding: var(--space-2xl) var(--space-md);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-alt) 0%,
+    var(--color-bg-warm) 50%,
+    var(--color-bg-alt) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow */
+.quick-stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), var(--color-rose), var(--color-gold), transparent);
+}
+
+.quick-stats::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), var(--color-rose), var(--color-gold), transparent);
+}
+
+.quick-stats__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.stat {
+  text-align: center;
+  padding: var(--space-md) var(--space-sm);
+  position: relative;
+  border-radius: var(--radius-md);
+  transition: all var(--duration-md) var(--ease-out);
+}
+
+.stat::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
+  border-radius: var(--radius-full);
+  transition: width var(--duration-md) var(--ease-out);
+}
+
+.stat:hover {
+  background: rgba(200, 151, 58, 0.04);
+  transform: translateY(-3px);
+}
+
+.stat:hover::after {
+  width: 60%;
+}
+
+.stat__icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+  filter: grayscale(0);
+  transition: transform var(--duration-md) var(--ease-spring);
+}
+
+.stat:hover .stat__icon {
+  transform: scale(1.2);
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  display: block;
+  line-height: 1.2;
+  transition: color var(--duration-md) var(--ease-out);
+}
+
+.stat:hover .stat__value {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat__label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-top: var(--space-xs);
+  display: block;
+}
+
+/* ── 3 columns on small tablets ──────────────────────────── */
+@media (min-width: 480px) {
+  .quick-stats {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .quick-stats__container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  .stat__icon {
+    font-size: 1.8rem;
+  }
+
+  .stat__label {
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+  }
+}
+
+/* ── 6 columns on tablets+ ───────────────────────────────── */
+@media (min-width: 768px) {
+  .quick-stats {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .quick-stats__container {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .stat {
+    padding: var(--space-lg);
+  }
+
+  .stat__icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .stat__label {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+  }
+}

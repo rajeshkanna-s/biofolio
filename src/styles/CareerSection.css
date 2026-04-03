@@ -1,0 +1,291 @@
+/* ── Career Section — Fully Responsive ────────────────────── */
+.career__content {
+  display: grid;
+  gap: var(--space-2xl);
+}
+
+/* Education timeline */
+.career__education-title,
+.career__current-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.career__education-title::before { content: '🎓'; }
+.career__current-title::before { content: '💼'; }
+
+.career__timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.career__timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0.5rem;
+  width: 2px;
+  height: calc(100% - 20px);
+  background: linear-gradient(
+    to bottom,
+    var(--color-gold),
+    var(--color-gold-light),
+    var(--color-border)
+  );
+  border-radius: var(--radius-full);
+}
+
+.career__timeline-item {
+  position: relative;
+  padding-bottom: var(--space-lg);
+}
+
+.career__timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.career__timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 2.5px solid var(--color-gold);
+  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(200, 151, 58, 0.1);
+  transition: all var(--duration-md) var(--ease-out);
+}
+
+.career__timeline-item:hover .career__timeline-dot {
+  background: var(--color-gold);
+  box-shadow: 0 0 0 8px rgba(200, 151, 58, 0.15);
+}
+
+.career__timeline-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--duration-md) var(--ease-out);
+}
+
+.career__timeline-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+  border-color: var(--color-gold);
+}
+
+.career__timeline-year {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  color: var(--color-gold-dark);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.career__timeline-degree {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.career__timeline-institute {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.career__timeline-location {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+/* Current role */
+.career__role-card {
+  background: linear-gradient(135deg, var(--color-surface), var(--color-surface-warm));
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.career__role-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-primary), var(--color-gold));
+}
+
+.career__role-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.career__role-company {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.career__role-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.career__role-meta-item {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* Skills */
+.career__skills-heading {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.career__skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.career__skill-tag {
+  padding: 0.3rem 0.7rem;
+  background: var(--color-primary-soft);
+  border: 1px solid rgba(139, 26, 60, 0.08);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: all var(--duration-sm) var(--ease-out);
+  cursor: default;
+}
+
+.career__skill-tag:hover {
+  background: rgba(139, 26, 60, 0.1);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Certifications */
+.career__certs-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.career__cert {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+}
+
+.career__cert::before {
+  content: '✦';
+  color: var(--color-gold);
+  font-size: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ── Breakpoints ─────────────────────────────────────────── */
+@media (min-width: 480px) {
+  .career__timeline {
+    padding-left: 2.5rem;
+  }
+
+  .career__timeline-dot {
+    left: -2.5rem;
+    width: 14px;
+    height: 14px;
+    border-width: 3px;
+    box-shadow: 0 0 0 5px rgba(200, 151, 58, 0.1);
+  }
+
+  .career__timeline-card {
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+  }
+
+  .career__timeline-degree {
+    font-size: 1.15rem;
+  }
+
+  .career__timeline-year {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+  }
+
+  .career__role-card {
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+  }
+
+  .career__role-meta {
+    gap: var(--space-md);
+  }
+
+  .career__role-meta-item {
+    font-size: 0.82rem;
+  }
+
+  .career__skill-tag {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .career__skills-list {
+    gap: var(--space-sm);
+  }
+
+  .career__education-title,
+  .career__current-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .career__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+  }
+}

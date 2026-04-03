@@ -1,0 +1,207 @@
+/* ── Footer — Fully Responsive ────────────────────────────── */
+.footer {
+  background: linear-gradient(170deg, #1C1410 0%, #2A1F18 50%, #1C1410 100%);
+  color: var(--color-bg);
+  padding: var(--space-2xl) var(--space-md) var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), var(--color-rose), var(--color-gold), transparent);
+}
+
+.footer__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(245, 239, 228, 0.08);
+  text-align: center;
+}
+
+.footer__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-bg);
+  margin-bottom: var(--space-xs);
+  background: linear-gradient(135deg, #F5EFE4, #C8973A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer__tagline {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: rgba(245, 239, 228, 0.45);
+  font-style: italic;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.footer__link {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(245, 239, 228, 0.5);
+  text-decoration: none;
+  transition: all var(--duration-md) var(--ease-out);
+  position: relative;
+}
+
+.footer__link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width var(--duration-md) var(--ease-out);
+}
+
+.footer__link:hover {
+  color: var(--color-gold-light);
+}
+
+.footer__link:hover::after {
+  width: 100%;
+}
+
+.footer__actions {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-lg) 0;
+}
+
+.footer__pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.82rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-md) var(--ease-out);
+}
+
+.footer__pdf-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(200, 151, 58, 0.4);
+}
+
+.footer__bottom {
+  padding-top: var(--space-lg);
+  text-align: center;
+  border-top: 1px solid rgba(245, 239, 228, 0.08);
+}
+
+.footer__note {
+  font-size: 0.75rem;
+  color: rgba(245, 239, 228, 0.3);
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.footer__credit {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  color: rgba(245, 239, 228, 0.2);
+}
+
+/* ── Breakpoints ─────────────────────────────────────────── */
+@media (min-width: 480px) {
+  .footer {
+    padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+  }
+
+  .footer__name {
+    font-size: 1.8rem;
+  }
+
+  .footer__tagline {
+    font-size: 0.9rem;
+  }
+
+  .footer__nav {
+    gap: var(--space-md);
+  }
+
+  .footer__link {
+    font-size: 0.85rem;
+  }
+
+  .footer__pdf-btn {
+    font-size: 0.88rem;
+    padding: 0.75rem 1.6rem;
+  }
+
+  .footer__note {
+    font-size: 0.82rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .footer__credit {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: var(--space-4xl) var(--space-xl) var(--space-xl);
+  }
+
+  .footer__top {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .footer__name {
+    font-size: 2rem;
+  }
+
+  .footer__tagline {
+    font-size: 0.95rem;
+  }
+
+  .footer__nav {
+    gap: var(--space-lg);
+  }
+
+  .footer__link {
+    font-size: 0.88rem;
+  }
+
+  .footer__actions {
+    padding: var(--space-xl) 0;
+  }
+
+  .footer__bottom {
+    padding-top: var(--space-xl);
+  }
+}

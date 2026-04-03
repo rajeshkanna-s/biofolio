@@ -1,0 +1,226 @@
+/* ── Horoscope Section — Fully Responsive ─────────────────── */
+.horoscope {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1C1410 0%, #2A1F1A 100%);
+  color: #F5EFE4;
+}
+
+.horoscope .section-label {
+  color: var(--color-gold-light);
+}
+
+.horoscope .section-title {
+  color: #F5EFE4;
+}
+
+.horoscope .section-title::after {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+}
+
+.horoscope__zodiac-bg {
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  color: var(--color-gold);
+  opacity: 0.15;
+  pointer-events: none;
+  font-size: 200px;
+}
+
+.horoscope__grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.horoscope__details {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(200, 151, 58, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.horoscope__details:hover {
+  border-color: rgba(200, 151, 58, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.horoscope__manglik-badge {
+  margin-bottom: var(--space-md);
+}
+
+.badge-amber {
+  background: rgba(232, 184, 90, 0.15);
+  color: var(--color-gold-light);
+  border-color: rgba(232, 184, 90, 0.3);
+}
+
+.horoscope__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.horoscope__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.horoscope__row:last-child {
+  border-bottom: none;
+}
+
+.horoscope__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(245, 239, 228, 0.5);
+}
+
+.horoscope__value {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #F5EFE4;
+}
+
+.horoscope__note {
+  margin-top: var(--space-md);
+  font-size: 0.82rem;
+  color: rgba(245, 239, 228, 0.5);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.horoscope__download {
+  margin-top: var(--space-md);
+  width: 100%;
+  justify-content: center;
+}
+
+/* Visual Card */
+.horoscope__visual-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(200, 151, 58, 0.1), rgba(139, 26, 60, 0.1));
+  border: 1px solid rgba(200, 151, 58, 0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  overflow: hidden;
+}
+
+.horoscope__stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.horoscope__star {
+  position: absolute;
+  color: var(--color-gold-light);
+  animation: float 3s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+.horoscope__visual-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.horoscope__rashi-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--space-md);
+  opacity: 0.8;
+}
+
+.horoscope__rashi-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-sm);
+}
+
+.horoscope__rashi-sub {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: rgba(245, 239, 228, 0.6);
+  font-style: italic;
+}
+
+/* ── Breakpoints ─────────────────────────────────────────── */
+@media (min-width: 480px) {
+  .horoscope__row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: 0.7rem 0;
+  }
+
+  .horoscope__label {
+    font-size: 0.72rem;
+  }
+
+  .horoscope__value {
+    font-size: 0.95rem;
+    text-align: right;
+  }
+
+  .horoscope__visual-card {
+    padding: var(--space-3xl) var(--space-xl);
+    min-height: 270px;
+  }
+
+  .horoscope__rashi-icon {
+    font-size: 4rem;
+  }
+
+  .horoscope__rashi-name {
+    font-size: 1.8rem;
+  }
+
+  .horoscope__zodiac-bg {
+    right: -80px;
+    top: -80px;
+    opacity: 0.2;
+  }
+}
+
+@media (min-width: 768px) {
+  .horoscope__grid {
+    gap: var(--space-2xl);
+  }
+
+  .horoscope__visual-card {
+    padding: var(--space-4xl) var(--space-xl);
+    min-height: 300px;
+  }
+
+  .horoscope__rashi-name {
+    font-size: 2rem;
+  }
+
+  .horoscope__rashi-sub {
+    font-size: 1rem;
+  }
+
+  .horoscope__zodiac-bg {
+    right: -100px;
+    top: -100px;
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .horoscope__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: var(--space-3xl);
+  }
+}

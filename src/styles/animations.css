@@ -1,0 +1,1200 @@
+/* ============================================================
+   Animations — BioFolio Enchanted Edition
+   Magical, romanti, girl-favorite animations ✨🌸💕
+   ============================================================ */
+
+/* ── Scroll reveal ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity var(--duration-lg) var(--ease-out),
+    transform var(--duration-lg) var(--ease-out);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Fade-in variants ─────────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s var(--ease-out) forwards;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s var(--ease-out) forwards;
+  opacity: 0;
+}
+
+/* ── Hero letter reveal ───────────────────────────────────── */
+.letter-reveal span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px) rotateX(30deg);
+  animation: letterReveal 0.5s var(--ease-out) forwards;
+}
+
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ✨ ENCHANTING GIRL-FAVORITE ANIMATIONS ✨
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── 🌸 Rose Petal Rain — Continuous falling petals ──────── */
+@keyframes petalFall {
+  0% {
+    transform: translateY(-10%) translateX(0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(25vh) translateX(30px) rotate(90deg) scale(0.95);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-20px) rotate(180deg) scale(0.85);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(75vh) translateX(15px) rotate(270deg) scale(0.75);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(110vh) translateX(-10px) rotate(360deg) scale(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes petalDrift {
+  0% {
+    transform: translateY(-20px) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 0.12; }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(30px);
+    opacity: 0.08;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(-20px);
+    opacity: 0;
+  }
+}
+
+.petal-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+.petal-rain__petal {
+  position: absolute;
+  top: -40px;
+  animation: petalFall linear infinite;
+  pointer-events: none;
+  filter: blur(0.5px);
+}
+
+/* ── 🦋 Floating Butterflies ─────────────────────────────── */
+@keyframes butterflyFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scaleX(1);
+  }
+  10% {
+    transform: translate(30px, -20px) rotate(5deg) scaleX(0.3);
+  }
+  20% {
+    transform: translate(60px, -10px) rotate(-3deg) scaleX(1);
+  }
+  30% {
+    transform: translate(90px, -30px) rotate(4deg) scaleX(0.3);
+  }
+  40% {
+    transform: translate(120px, -15px) rotate(-5deg) scaleX(1);
+  }
+  50% {
+    transform: translate(80px, -40px) rotate(3deg) scaleX(0.3);
+  }
+  60% {
+    transform: translate(40px, -25px) rotate(-4deg) scaleX(1);
+  }
+  70% {
+    transform: translate(10px, -50px) rotate(6deg) scaleX(0.3);
+  }
+  80% {
+    transform: translate(-30px, -35px) rotate(-3deg) scaleX(1);
+  }
+  90% {
+    transform: translate(-10px, -15px) rotate(2deg) scaleX(0.3);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scaleX(1);
+  }
+}
+
+@keyframes wingFlap {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.3); }
+}
+
+/* ── ✨ Sparkle Burst (on hover / click) ──────────────────── */
+@keyframes sparkleBurst {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px) scale(0) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* ── 💖 Heartbeat pulse ──────────────────────────────────── */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%      { transform: scale(1.2); }
+  28%      { transform: scale(1); }
+  42%      { transform: scale(1.25); }
+  56%      { transform: scale(1); }
+}
+
+@keyframes heartFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.3) rotate(-15deg);
+  }
+  15% {
+    opacity: 0.8;
+    transform: translateY(-30px) scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(-100px) scale(0.8) rotate(10deg) translateX(25px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-180px) scale(0.2) rotate(-10deg) translateX(-15px);
+  }
+}
+
+/* ── 🎀 Ribbon unfurl ────────────────────────────────────── */
+@keyframes ribbonUnfurl {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* ── ✨ Glitter text shimmer — enchanting gold sweep ──────── */
+@keyframes glitterSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-text) 0%,
+    var(--color-text) 35%,
+    var(--color-gold-light) 45%,
+    var(--color-gold) 50%,
+    var(--color-gold-light) 55%,
+    var(--color-text) 65%,
+    var(--color-text) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glitterSweep 3s linear infinite;
+}
+
+/* ── 🌈 Rainbow border glow ──────────────────────────────── */
+@keyframes rainbowGlow {
+  0%   { border-color: var(--color-rose); box-shadow: 0 0 20px rgba(232, 160, 176, 0.3); }
+  25%  { border-color: var(--color-gold); box-shadow: 0 0 20px rgba(200, 151, 58, 0.3); }
+  50%  { border-color: var(--color-lavender); box-shadow: 0 0 20px rgba(200, 162, 212, 0.3); }
+  75%  { border-color: var(--color-rose-deep); box-shadow: 0 0 20px rgba(212, 114, 138, 0.3); }
+  100% { border-color: var(--color-rose); box-shadow: 0 0 20px rgba(232, 160, 176, 0.3); }
+}
+
+/* ── 💫 Enchanted float ──────────────────────────────────── */
+@keyframes enchantedFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    filter: brightness(1);
+  }
+  25% {
+    transform: translateY(-12px) rotate(1deg);
+    filter: brightness(1.05);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-0.5deg);
+    filter: brightness(1.02);
+  }
+  75% {
+    transform: translateY(-14px) rotate(0.8deg);
+    filter: brightness(1.04);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ── 🌟 Stardust trail ───────────────────────────────────── */
+@keyframes stardustTrail {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5) translate(var(--tx, 10px), var(--ty, -20px));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translate(var(--tx2, 20px), var(--ty2, -40px));
+  }
+}
+
+/* ── 💎 Diamond sparkle ──────────────────────────────────── */
+@keyframes diamondSparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.2) rotate(45deg);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scale(0.8) rotate(90deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1) rotate(135deg);
+  }
+  80% {
+    opacity: 0.3;
+    transform: scale(0.6) rotate(180deg);
+  }
+}
+
+/* ── 🕊️ Dove wing / feather drift ────────────────────────── */
+@keyframes featherDrift {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  30% {
+    transform: translateY(20vh) translateX(40px) rotate(30deg);
+  }
+  60% {
+    transform: translateY(50vh) translateX(-20px) rotate(-15deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh) translateX(10px) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+/* ── 🌸 Blossom bloom ────────────────────────────────────── */
+@keyframes blossomBloom {
+  0% {
+    transform: scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.1) rotate(0deg);
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  60% {
+    transform: scale(0.95) rotate(3deg);
+    filter: brightness(1);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* ── 💕 Love wave (section entrance) ─────────────────────── */
+@keyframes loveWaveIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+    filter: blur(4px);
+  }
+  40% {
+    opacity: 0.7;
+    filter: blur(1px);
+  }
+  70% {
+    transform: translateY(-5px) scale(1.01);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ── ✨ Fairy dust particles ──────────────────────────────── */
+@keyframes fairyDust {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  30% {
+    transform: translateY(-15vh) translateX(8px) scale(0.8);
+    opacity: 0.6;
+  }
+  60% {
+    transform: translateY(-35vh) translateX(-5px) scale(0.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-60vh) translateX(3px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+/* ── 🎪 Magnetic card hover ──────────────────────────────── */
+@keyframes magneticLift {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-8px) scale(1.02); }
+}
+
+/* ── 🌙 Moonlight glow pulse ─────────────────────────────── */
+@keyframes moonlightGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 15px rgba(232, 160, 176, 0.15),
+      0 0 30px rgba(200, 151, 58, 0.05),
+      0 0 0 0 rgba(232, 160, 176, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(232, 160, 176, 0.25),
+      0 0 50px rgba(200, 151, 58, 0.1),
+      0 0 0 10px rgba(232, 160, 176, 0);
+  }
+}
+
+/* ── 🎭 Curtain reveal ───────────────────────────────────── */
+@keyframes curtainRevealLeft {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes curtainRevealRight {
+  0% { clip-path: inset(0 0 0 100%); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+/* ── 💐 Bouquet toss (confetti burst) ────────────────────── */
+@keyframes confettiBurst {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--cx, 50px), var(--cy, -80px)) rotate(var(--cr, 360deg)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* ── Glow pulse rings ────────────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(200, 151, 58, 0.1),
+      0 0 0 0 rgba(200, 151, 58, 0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(200, 151, 58, 0.2),
+      0 0 0 8px rgba(200, 151, 58, 0);
+  }
+}
+
+/* ── Soft breathing scale ─────────────────────────────────── */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.03); }
+}
+
+/* ── Gradient flow ────────────────────────────────────────── */
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Floating hearts ──────────────────────────────────────── */
+@keyframes floatHeart {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  20% {
+    opacity: 0.4;
+    transform: translateY(-20px) scale(1);
+  }
+  80% {
+    opacity: 0.1;
+    transform: translateY(-80px) scale(0.8) translateX(20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(0.3);
+  }
+}
+
+/* ── Shimmer sweep (button hover) ────────────────────────── */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ── Toast animations ─────────────────────────────────────── */
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+}
+
+/* ── Rotate ───────────────────────────────────────────────── */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Sparkle / Twinkle ────────────────────────────────────── */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.3); }
+}
+
+/* ── Sway ─────────────────────────────────────────────────── */
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg) translateX(0); }
+  25%      { transform: rotate(2deg) translateX(3px); }
+  75%      { transform: rotate(-2deg) translateX(-3px); }
+}
+
+/* ── Pulse glow ───────────────────────────────────────────── */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(200, 151, 58, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(200, 151, 58, 0);
+  }
+}
+
+/* ── Scale bounce ─────────────────────────────────────────── */
+@keyframes scaleBounce {
+  0%   { transform: scale(0.8); opacity: 0; }
+  60%  { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ── Scroll dot bounce ────────────────────────────────────── */
+@keyframes scrollDotBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(35px); opacity: 0.3; }
+}
+
+/* ── Aurora shimmer background ────────────────────────────── */
+@keyframes auroraShimmer {
+  0%   { background-position: 0% 0%; opacity: 0.4; }
+  25%  { opacity: 0.6; }
+  50%  { background-position: 100% 100%; opacity: 0.4; }
+  75%  { opacity: 0.55; }
+  100% { background-position: 0% 0%; opacity: 0.4; }
+}
+
+/* ── Liquid morph blob ────────────────────────────────────── */
+@keyframes morphBlob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 40% 60% / 40% 50% 60% 50%;
+  }
+  75% {
+    border-radius: 40% 60% 50% 70% / 60% 40% 50% 60%;
+  }
+}
+
+/* ── 3D card tilt ─────────────────────────────────────────── */
+@keyframes tiltIn {
+  from {
+    transform: perspective(800px) rotateY(6deg) rotateX(4deg) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(800px) rotateY(0) rotateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── Particle rise ────────────────────────────────────────── */
+@keyframes particleRise {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-40vh) translateX(10px) scale(0.6);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-80vh) translateX(-5px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+/* ── Soft parallax drift ──────────────────────────────────── */
+@keyframes parallaxDrift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(10px, -15px) rotate(1deg);
+  }
+  66% {
+    transform: translate(-8px, -5px) rotate(-1deg);
+  }
+}
+
+/* ── Ring pulse ───────────────────────────────────────────── */
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+    box-shadow: 0 0 0 0 rgba(200, 151, 58, 0.3);
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 20px 8px rgba(200, 151, 58, 0.1);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+    box-shadow: 0 0 0 0 rgba(200, 151, 58, 0.3);
+  }
+}
+
+/* ── Slide up with spring ─────────────────────────────────── */
+@keyframes slideUpSpring {
+  0% {
+    transform: translateY(60px) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-8px) scale(1.01);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(3px) scale(0.995);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── Entrance pop ─────────────────────────────────────────── */
+@keyframes entrancePop {
+  0% {
+    transform: scale(0.6) rotate(-3deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.08) rotate(0.5deg);
+  }
+  70% {
+    transform: scale(0.97) rotate(-0.2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* ── Gradient shift ───────────────────────────────────────── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Line grow ────────────────────────────────────────────── */
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── Cursor blink ─────────────────────────────────────────── */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   APPLIED ANIMATION CLASSES & COMPONENTS
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Spin slow (horoscope zodiac) ─────────────────────────── */
+.spin-slow {
+  animation: rotate 60s linear infinite;
+}
+
+/* ── Animated gradient border ─────────────────────────────── */
+.gradient-border {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-gold), var(--color-rose), var(--color-primary));
+  background-size: 300% 300%;
+  animation: gradientFlow 6s ease infinite;
+}
+
+/* ── Stagger children reveal ──────────────────────────────── */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s var(--ease-out);
+}
+
+.revealed .reveal-stagger > *:nth-child(1) { transition-delay: 0.05s; }
+.revealed .reveal-stagger > *:nth-child(2) { transition-delay: 0.1s; }
+.revealed .reveal-stagger > *:nth-child(3) { transition-delay: 0.15s; }
+.revealed .reveal-stagger > *:nth-child(4) { transition-delay: 0.2s; }
+.revealed .reveal-stagger > *:nth-child(5) { transition-delay: 0.25s; }
+.revealed .reveal-stagger > *:nth-child(6) { transition-delay: 0.3s; }
+.revealed .reveal-stagger > *:nth-child(7) { transition-delay: 0.35s; }
+.revealed .reveal-stagger > *:nth-child(8) { transition-delay: 0.4s; }
+.revealed .reveal-stagger > *:nth-child(9) { transition-delay: 0.45s; }
+.revealed .reveal-stagger > *:nth-child(10) { transition-delay: 0.5s; }
+
+.revealed .reveal-stagger > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Floating particles layer ─────────────────────────────── */
+.particles-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  animation: particleRise linear infinite;
+  opacity: 0;
+}
+
+.particle:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; }
+.particle:nth-child(2) { left: 25%; animation-duration: 15s; animation-delay: 2s; width: 3px; height: 3px; background: var(--color-rose); }
+.particle:nth-child(3) { left: 40%; animation-duration: 10s; animation-delay: 4s; }
+.particle:nth-child(4) { left: 55%; animation-duration: 14s; animation-delay: 1s; width: 5px; height: 5px; }
+.particle:nth-child(5) { left: 70%; animation-duration: 11s; animation-delay: 3s; width: 3px; height: 3px; background: var(--color-rose); }
+.particle:nth-child(6) { left: 85%; animation-duration: 13s; animation-delay: 5s; }
+.particle:nth-child(7) { left: 15%; animation-duration: 16s; animation-delay: 6s; width: 2px; height: 2px; }
+.particle:nth-child(8) { left: 92%; animation-duration: 9s; animation-delay: 2.5s; width: 6px; height: 6px; }
+
+/* ── Aurora background layer ──────────────────────────────── */
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.aurora-bg::before,
+.aurora-bg::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: parallaxDrift 20s ease-in-out infinite;
+  mix-blend-mode: multiply;
+}
+
+.aurora-bg::before {
+  background: radial-gradient(circle, rgba(232, 160, 176, 0.12) 0%, transparent 70%);
+  top: -200px;
+  left: -100px;
+}
+
+.aurora-bg::after {
+  background: radial-gradient(circle, rgba(200, 151, 58, 0.08) 0%, transparent 70%);
+  bottom: -200px;
+  right: -100px;
+  animation-delay: -10s;
+}
+
+/* ── Morphing blob decoration ─────────────────────────────── */
+.morph-blob {
+  position: absolute;
+  pointer-events: none;
+  animation: morphBlob 15s ease-in-out infinite;
+  filter: blur(60px);
+  opacity: 0.06;
+}
+
+/* ── Premium hover glow ring ──────────────────────────────── */
+.hover-glow {
+  position: relative;
+}
+
+.hover-glow::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-rose), var(--color-primary), var(--color-gold));
+  background-size: 300% 300%;
+  animation: gradientFlow 4s ease infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+}
+
+.hover-glow:hover::after {
+  opacity: 1;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   🌸 ROSE PETAL RAIN — The star attraction
+   ══════════════════════════════════════════════════════════════ */
+.petal-rain__petal:nth-child(1) { left: 5%; animation-duration: 9s; animation-delay: 0s; font-size: 18px; }
+.petal-rain__petal:nth-child(2) { left: 12%; animation-duration: 11s; animation-delay: 1.2s; font-size: 14px; }
+.petal-rain__petal:nth-child(3) { left: 20%; animation-duration: 8s; animation-delay: 3s; font-size: 20px; }
+.petal-rain__petal:nth-child(4) { left: 28%; animation-duration: 13s; animation-delay: 0.5s; font-size: 16px; }
+.petal-rain__petal:nth-child(5) { left: 35%; animation-duration: 10s; animation-delay: 4s; font-size: 12px; }
+.petal-rain__petal:nth-child(6) { left: 42%; animation-duration: 12s; animation-delay: 2s; font-size: 22px; }
+.petal-rain__petal:nth-child(7) { left: 50%; animation-duration: 9.5s; animation-delay: 5s; font-size: 15px; }
+.petal-rain__petal:nth-child(8) { left: 58%; animation-duration: 14s; animation-delay: 1s; font-size: 18px; }
+.petal-rain__petal:nth-child(9) { left: 65%; animation-duration: 11s; animation-delay: 3.5s; font-size: 13px; }
+.petal-rain__petal:nth-child(10) { left: 72%; animation-duration: 8.5s; animation-delay: 0.8s; font-size: 20px; }
+.petal-rain__petal:nth-child(11) { left: 80%; animation-duration: 10s; animation-delay: 6s; font-size: 16px; }
+.petal-rain__petal:nth-child(12) { left: 88%; animation-duration: 12.5s; animation-delay: 2.5s; font-size: 14px; }
+.petal-rain__petal:nth-child(13) { left: 95%; animation-duration: 9s; animation-delay: 4.5s; font-size: 18px; }
+.petal-rain__petal:nth-child(14) { left: 8%; animation-duration: 15s; animation-delay: 7s; font-size: 11px; }
+.petal-rain__petal:nth-child(15) { left: 15%; animation-duration: 10.5s; animation-delay: 1.8s; font-size: 19px; }
+.petal-rain__petal:nth-child(16) { left: 33%; animation-duration: 13.5s; animation-delay: 5.5s; font-size: 13px; }
+.petal-rain__petal:nth-child(17) { left: 48%; animation-duration: 11.5s; animation-delay: 0.3s; font-size: 17px; }
+.petal-rain__petal:nth-child(18) { left: 62%; animation-duration: 9.5s; animation-delay: 3.2s; font-size: 21px; }
+.petal-rain__petal:nth-child(19) { left: 78%; animation-duration: 14.5s; animation-delay: 6.5s; font-size: 12px; }
+.petal-rain__petal:nth-child(20) { left: 91%; animation-duration: 10s; animation-delay: 2.8s; font-size: 16px; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   ✨ SPARKLE CURSOR TRAIL — magical sparkles follow mouse
+   ══════════════════════════════════════════════════════════════ */
+.sparkle-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 10px;
+  height: 10px;
+  animation: diamondSparkle 0.8s ease-out forwards;
+}
+
+.sparkle-cursor::before {
+  content: '✦';
+  position: absolute;
+  font-size: 12px;
+  color: var(--color-gold);
+  text-shadow: 0 0 6px rgba(200, 151, 58, 0.5);
+}
+
+.sparkle-cursor:nth-child(2n)::before {
+  content: '✧';
+  color: var(--color-rose);
+  text-shadow: 0 0 6px rgba(232, 160, 176, 0.5);
+}
+
+.sparkle-cursor:nth-child(3n)::before {
+  content: '·';
+  font-size: 18px;
+  color: var(--color-gold-light);
+  text-shadow: 0 0 8px rgba(232, 184, 90, 0.6);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   💕 FLOATING HEARTS — rising from bottom
+   ══════════════════════════════════════════════════════════════ */
+.floating-hearts {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9997;
+  overflow: hidden;
+}
+
+.floating-hearts__heart {
+  position: absolute;
+  bottom: -30px;
+  animation: heartFloat ease-out infinite;
+  opacity: 0;
+  filter: blur(0.3px);
+}
+
+.floating-hearts__heart:nth-child(1) { left: 8%; animation-duration: 6s; animation-delay: 0s; font-size: 14px; color: var(--color-rose); }
+.floating-hearts__heart:nth-child(2) { left: 22%; animation-duration: 8s; animation-delay: 2s; font-size: 10px; color: var(--color-rose-light); }
+.floating-hearts__heart:nth-child(3) { left: 38%; animation-duration: 7s; animation-delay: 4s; font-size: 16px; color: var(--color-rose-deep); }
+.floating-hearts__heart:nth-child(4) { left: 55%; animation-duration: 9s; animation-delay: 1s; font-size: 12px; color: var(--color-rose); }
+.floating-hearts__heart:nth-child(5) { left: 70%; animation-duration: 6.5s; animation-delay: 5s; font-size: 18px; color: var(--color-rose-light); }
+.floating-hearts__heart:nth-child(6) { left: 85%; animation-duration: 7.5s; animation-delay: 3s; font-size: 11px; color: var(--color-rose); }
+.floating-hearts__heart:nth-child(7) { left: 45%; animation-duration: 10s; animation-delay: 6s; font-size: 8px; color: var(--color-rose-deep); }
+.floating-hearts__heart:nth-child(8) { left: 92%; animation-duration: 8.5s; animation-delay: 7s; font-size: 13px; color: var(--color-rose-light); }
+
+
+/* ══════════════════════════════════════════════════════════════
+   ✨ FAIRY DUST — rising sparkle particles 
+   ══════════════════════════════════════════════════════════════ */
+.fairy-dust {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9996;
+  overflow: hidden;
+}
+
+.fairy-dust__particle {
+  position: absolute;
+  bottom: -10px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  animation: fairyDust linear infinite;
+  opacity: 0;
+}
+
+.fairy-dust__particle:nth-child(1) { left: 12%; animation-duration: 10s; animation-delay: 0s; background: var(--color-gold); width: 4px; height: 4px; }
+.fairy-dust__particle:nth-child(2) { left: 28%; animation-duration: 12s; animation-delay: 1.5s; background: var(--color-rose); }
+.fairy-dust__particle:nth-child(3) { left: 45%; animation-duration: 9s; animation-delay: 3s; background: var(--color-gold-light); width: 5px; height: 5px; }
+.fairy-dust__particle:nth-child(4) { left: 62%; animation-duration: 14s; animation-delay: 0.5s; background: var(--color-rose-light); }
+.fairy-dust__particle:nth-child(5) { left: 78%; animation-duration: 11s; animation-delay: 4s; background: var(--color-gold); width: 4px; height: 4px; }
+.fairy-dust__particle:nth-child(6) { left: 88%; animation-duration: 13s; animation-delay: 2s; background: var(--color-lavender); }
+.fairy-dust__particle:nth-child(7) { left: 5%; animation-duration: 15s; animation-delay: 5s; background: var(--color-gold-light); width: 3px; height: 3px; }
+.fairy-dust__particle:nth-child(8) { left: 35%; animation-duration: 8s; animation-delay: 6.5s; background: var(--color-rose); width: 5px; height: 5px; }
+.fairy-dust__particle:nth-child(9) { left: 55%; animation-duration: 16s; animation-delay: 1s; background: var(--color-gold); }
+.fairy-dust__particle:nth-child(10) { left: 95%; animation-duration: 10s; animation-delay: 3.5s; background: var(--color-rose-light); width: 4px; height: 4px; }
+
+
+/* ══════════════════════════════════════════════════════════════
+   🌸 SECTION ENCHANTMENT — Card & section enhancements
+   ══════════════════════════════════════════════════════════════ */
+
+/* Cards get an enchanted hover with glow + lift */
+.card {
+  transition: all 0.5s var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow:
+    0 20px 60px rgba(139, 26, 60, 0.06),
+    0 8px 24px rgba(200, 151, 58, 0.08),
+    0 0 0 1px rgba(200, 151, 58, 0.1);
+}
+
+/* Badge chips get a sweet hover */
+.badge {
+  transition: all 0.3s var(--ease-spring);
+}
+
+.badge:hover {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 4px 12px rgba(200, 151, 58, 0.15);
+}
+
+/* Section labels get sparkle treatment */
+.section-label {
+  position: relative;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5em;
+  color: var(--color-gold);
+  opacity: 0.5;
+  animation: sparkle 2s ease-in-out infinite;
+  display: none;
+}
+
+.section-label::before {
+  left: -1.2em;
+  animation-delay: 0s;
+}
+
+.section-label::after {
+  right: -1.2em;
+  animation-delay: 1s;
+}
+
+@media (min-width: 768px) {
+  .section-label::before,
+  .section-label::after {
+    display: inline;
+  }
+}
+
+/* Photo cards get enchanted hover */
+.gallery__photo-card {
+  transition: all 0.5s var(--ease-out);
+}
+
+.gallery__photo-card:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow:
+    0 20px 50px rgba(139, 26, 60, 0.1),
+    0 0 30px rgba(232, 160, 176, 0.15);
+}
+
+/* Button shimmer effect — more magical */
+.btn-primary::after,
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.3) 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.3) 55%,
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  transition: none;
+  pointer-events: none;
+}
+
+.btn-primary:hover::after,
+.btn-gold:hover::after {
+  animation: shimmer 0.8s ease-in-out;
+}
+
+/* CTA heart animation — more lively */
+.hero__cta-heart {
+  display: inline-block;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   🎀 ORNAMENT DIVIDER — enchanted sparkle
+   ══════════════════════════════════════════════════════════════ */
+.ornament-divider__icon {
+  animation: sparkle 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   Reduced Motion — Accessibility
+   ══════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fade-in-up,
+  .fade-in,
+  .letter-reveal span {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .spin-slow {
+    animation: none !important;
+  }
+
+  .aurora-bg::before,
+  .aurora-bg::after,
+  .morph-blob,
+  .particles-layer,
+  .particle,
+  .petal-rain,
+  .floating-hearts,
+  .fairy-dust {
+    animation: none !important;
+    display: none !important;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .sparkle-cursor {
+    display: none !important;
+  }
+}
