@@ -51,11 +51,14 @@ export const quickStats = [
 
 export const about = {
   pullQuote:
-    "I believe a great marriage is built on friendship first — everything else follows.",
+    "I believe marriage is a partnership where both individuals grow together emotionally, professionally, and personally.",
   paragraphs: [
-    "I'm Rajeshkanna — a software engineer with 8+ years of professional experience who is passionate about building robust, scalable web applications. I specialize in Java, Spring Boot, and full-stack development, and I also take on freelance web development projects where I've built 30+ websites for startups and small businesses across India.",
-    "I'm currently based in Chennai and working at Kuwy Technology Service Pvt Ltd, where I develop web applications using Java, Spring MVC, and Spring Boot, integrate third-party APIs, and collaborate on creating responsive, user-friendly interfaces. Before this, I spent over three years at Barclays Shared Services as a Technical Support Specialist.",
-    "I'm looking for a partner who is her own person — confident, curious, and kind. Someone who wants to build a life that feels both rooted and free. I don't have a checklist; I have a feeling I'm looking for.",
+    "I have completed my Bachelor's degree in Computer Science Engineering and am currently working as a Senior Software Engineer. I consider myself a calm, responsible, and practical person with a positive outlook toward life. I value honesty, mutual respect, and clear communication in all relationships.",
+    "My intention is to start married life independently, setting up our own home and building a fresh beginning together, while maintaining respect and care for both families. In terms of beliefs, I respect all religions and the faith each person follows. I am not overly rigid or ritualistic about spirituality — I believe it should be simple, personal, and meaningful. Religion has no barrier for me; I am open to a Hindu or Christian partner, as I believe all religions carry the same positive values and divine power. Mutual respect matters more than labels.",
+    "On a personal note, I am very independent and self-sufficient. I have been cooking for myself for the past 10 years and genuinely enjoy it — cooking is one of my hobbies. Even if my future partner does not have cooking experience, it is absolutely not an issue for me. During my free time, I like watching movies and web series as a form of relaxation and entertainment. I would be happy if my partner also enjoys watching movies and series, as shared interests help build a strong bond.",
+    "Looking ahead, I have aspirations to start my own business in the future. I strongly believe that a supportive and understanding partner plays a key role in achieving long-term goals, and I am equally committed to being supportive of my partner's dreams and ambitions. I have an open mindset regarding my partner's career choices — whether she wishes to continue her job, focus on home, or pursue a business venture, I will fully respect and support her decision. I also have no objection if my partner wishes to support her family financially after marriage.",
+    "I would like to clearly mention that myself and my family do not have any expectations from my partner's family in terms of dowry, gold, or financial contributions of any kind. A person's character, values, and compatibility matter far more to me than financial background. I believe marriage should be based on mutual respect, understanding, and equality — not financial transactions.",
+    "I strongly believe that I can take good care of my life partner and provide her with a happy, respectful, and secure life based on mutual understanding and trust. Looking toward the future, I prefer a small and happy family and would like to have a maximum of two children. I am looking for a life partner who is understanding, caring, and emotionally mature — someone who values companionship, mutual support, and is ready to walk hand in hand through every phase of life.",
   ],
   friendQuotes: [
     { text: "A dedicated professional who always goes above and beyond.", name: "Colleague" },
@@ -65,14 +68,14 @@ export const about = {
   personalityTraits: [
     { icon: "🏡", label: "Family-First" },
     { icon: "💰", label: "Financially Stable" },
-    { icon: "💻", label: "Tech Enthusiast" },
-    { icon: "📚", label: "Lifelong Learner" },
+    { icon: "🍳", label: "Loves Cooking" },
     { icon: "🤝", label: "Deeply Loyal" },
     { icon: "🎯", label: "Goal-Oriented" },
-    { icon: "😄", label: "Great Sense of Humour" },
+    { icon: "😄", label: "Calm & Positive" },
     { icon: "🌱", label: "Emotionally Mature" },
-    { icon: "🔧", label: "Problem Solver" },
-    { icon: "✈️", label: "Travel Enthusiast" },
+    { icon: "💻", label: "Tech Enthusiast" },
+    { icon: "🙏", label: "Respectful & Open-Minded" },
+    { icon: "💪", label: "Independent & Self-Sufficient" },
   ],
 };
 
