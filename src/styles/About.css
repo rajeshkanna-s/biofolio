@@ -1,62 +1,106 @@
-/* ── About Section — Fully Responsive ─────────────────────── */
-.about__grid {
-  display: grid;
-  gap: var(--space-2xl);
+/* ── About Section — Premium Vertical Layout ─────────────────────── */
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ── Typography & Main Text ── */
+.about__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about__quote {
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   font-style: italic;
-  color: var(--color-primary);
-  line-height: 1.7;
-  padding: var(--space-lg) var(--space-md);
-  border-left: 3px solid var(--color-gold);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  margin-bottom: var(--space-lg);
-  background: linear-gradient(90deg, var(--color-gold-soft), transparent);
+  color: var(--color-gold);
+  line-height: 1.6;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  margin-bottom: var(--space-2xl);
   position: relative;
+  max-width: 850px;
 }
 
-.about__quote::before {
+.about__quote::before,
+.about__quote::after {
   content: '"';
   position: absolute;
-  top: -10px;
-  left: 10px;
   font-family: var(--font-display);
   font-size: 3rem;
   color: var(--color-gold);
-  opacity: 0.2;
+  opacity: 0.15;
   line-height: 1;
+}
+
+.about__quote::before {
+  top: 0;
+  left: 0;
+}
+
+.about__quote::after {
+  bottom: -20px;
+  right: 0;
+}
+
+.about__paragraphs {
+  text-align: justify;
+  text-justify: inter-character;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .about__paragraph {
   margin-bottom: var(--space-lg);
-  font-size: 0.92rem;
-  line-height: 1.85;
-}
-
-.about__friend-quotes {
-  margin-top: var(--space-xl);
-}
-
-.about__fq-heading {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.9;
   color: var(--color-text);
-  margin-bottom: var(--space-md);
+  letter-spacing: 0.2px;
+}
+
+.about__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Reusable Section Heading ── */
+.about__section-heading {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  width: 100%;
 }
 
-.about__fq-heading::before {
-  content: '💬';
-  font-size: 1rem;
+.about__section-icon {
+  font-size: 1.2rem;
 }
 
+.about__section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.about__section-line {
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-gold-soft), transparent);
+  flex-grow: 1;
+  max-width: 300px;
+  margin-left: var(--space-md);
+  opacity: 0.5;
+}
+
+/* ── Friend Quotes ── */
 .about__fq-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-md);
 }
 
@@ -109,45 +153,31 @@
   letter-spacing: 0.5px;
 }
 
-/* Personality Traits */
-.about__traits-heading {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  color: var(--color-text);
-  margin-bottom: var(--space-md);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-}
-
-.about__traits-heading::before {
-  content: '✨';
-}
-
+/* ── Personality Traits ── */
 .about__traits-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  justify-content: center;
 }
 
 .about__trait-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
-  padding: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
   display: flex;
   align-items: center;
   gap: var(--space-md);
   transition: all var(--duration-md) var(--ease-out);
   cursor: default;
+  box-shadow: var(--shadow-sm);
 }
 
 .about__trait-card:hover {
   border-color: var(--color-primary);
   background: var(--color-primary-soft);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   transform: translateY(-3px) scale(1.02);
 }
 
@@ -165,16 +195,15 @@
 
 .about__trait-label {
   font-family: var(--font-body);
-  font-size: 0.84rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-text);
 }
 
-/* ── Tablet ──────────────────────────────────────────────── */
+/* ── Responsive Adjustments ──────────── */
 @media (min-width: 480px) {
-  .about__traits-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
+  .about__trait-card {
+    padding: var(--space-lg);
   }
 
   .about__trait-icon {
@@ -182,43 +211,29 @@
     width: 40px;
     height: 40px;
   }
-
-  .about__paragraph {
-    font-size: 1.02rem;
-  }
 }
 
 @media (min-width: 768px) {
   .about__fq-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
   }
 
-  .about__quote {
-    padding: var(--space-xl) var(--space-xl);
+  .about__paragraphs {
+    column-count: 2;
+    column-gap: var(--space-2xl);
+    column-rule: 1px solid var(--color-border-light);
   }
-
-  .about__quote::before {
-    font-size: 4rem;
-    left: 15px;
-  }
-
-  .about__fq-heading,
-  .about__traits-heading {
-    font-size: 1.3rem;
+  
+  .about__paragraph {
+    text-align: left; /* Better for reading in columns */
+    margin-bottom: var(--space-lg);
   }
 }
 
 @media (min-width: 1024px) {
-  .about__grid {
-    grid-template-columns: 1.2fr 1fr;
-  }
-
-  .about__traits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about__trait-card {
-    padding: var(--space-lg);
-    border-radius: var(--radius-lg);
+  .about__paragraphs {
+    margin: 0;
+    max-width: 1000px;
   }
 }

@@ -27,22 +27,22 @@ export default function Horoscope() {
       {/* Decorative zodiac wheel */}
       <div className="horoscope__zodiac-bg spin-slow" aria-hidden="true">
         <svg viewBox="0 0 400 400" width="400" height="400">
-          <circle cx="200" cy="200" r="180" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.15"/>
-          <circle cx="200" cy="200" r="150" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.1"/>
-          <circle cx="200" cy="200" r="120" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.08"/>
+          <circle cx="200" cy="200" r="180" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.15" />
+          <circle cx="200" cy="200" r="150" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
+          <circle cx="200" cy="200" r="120" fill="none" stroke="currentColor" strokeWidth="0.3" opacity="0.08" />
           {[...Array(12)].map((_, i) => {
             const angle = (i * 30 - 90) * (Math.PI / 180);
             const x1 = 200 + 150 * Math.cos(angle);
             const y1 = 200 + 150 * Math.sin(angle);
             const x2 = 200 + 180 * Math.cos(angle);
             const y2 = 200 + 180 * Math.sin(angle);
-            return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" strokeWidth="0.5" opacity="0.12"/>;
+            return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" strokeWidth="0.5" opacity="0.12" />;
           })}
           {[...Array(12)].map((_, i) => {
             const angle = (i * 30 - 90) * (Math.PI / 180);
             const cx = 200 + 165 * Math.cos(angle);
             const cy = 200 + 165 * Math.sin(angle);
-            return <circle key={i} cx={cx} cy={cy} r="2" fill="currentColor" opacity="0.15"/>;
+            return <circle key={i} cx={cx} cy={cy} r="2" fill="currentColor" opacity="0.15" />;
           })}
         </svg>
       </div>
@@ -74,7 +74,7 @@ export default function Horoscope() {
 
             {horoscope.kundliAvailable && (
               <button onClick={handleKundliDownload} className="btn btn-gold horoscope__download">
-                📜 Download Kundli PDF
+                📜 Download Horoscope PDF
               </button>
             )}
           </div>
@@ -99,9 +99,9 @@ export default function Horoscope() {
                 ))}
               </div>
               <div className="horoscope__visual-content">
-                <span className="horoscope__rashi-icon">♓</span>
-                <h3 className="horoscope__rashi-name">Meena Rashi</h3>
-                <p className="horoscope__rashi-sub">Pisces · Revati Nakshatra</p>
+                <span className="horoscope__rashi-icon">♈</span>
+                <h3 className="horoscope__rashi-name">Mesha Rashi</h3>
+                <p className="horoscope__rashi-sub">Aries · Bharani Nakshatra</p>
               </div>
             </div>
           </div>

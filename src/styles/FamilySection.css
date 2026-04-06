@@ -1,277 +1,301 @@
-/* ── Family Section — Fully Responsive ────────────────────── */
+/* ── Family Section — Premium Responsive Design ────────────────────── */
 .family__content {
-  display: grid;
-  gap: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+  margin-top: var(--space-xl);
 }
 
-/* Parent cards */
+/* ── Section Titles ── */
+.badge-muted {
+  background: var(--color-surface-warm);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.family__section-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  letter-spacing: -0.01em;
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+.family__title-parents::before { content: '🕊️'; font-size: 1.6rem; }
+.family__title-siblings::before { content: '👫'; font-size: 1.6rem; }
+.family__title-details::before { content: '🏡'; font-size: 1.6rem; }
+.family__title-values::before { content: '💛'; font-size: 1.6rem; }
+
+/* ── Parent Cards ── */
 .family__parents {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .family__parent-card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   align-items: center;
   text-align: center;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  box-shadow: var(--shadow-card);
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(0,0,0,0.01));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
   transition: all var(--duration-md) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
 }
 
 .family__parent-card:hover {
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-  transform: translateY(-3px);
-  border-color: var(--color-gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), 0 10px 40px rgba(200, 151, 58, 0.08);
+  border-color: rgba(200, 151, 58, 0.3);
+}
+
+/* Subtle accent line on hover */
+.family__parent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-gold);
+  opacity: 0;
+  transition: opacity var(--duration-md);
+}
+
+.family__parent-card:hover::before {
+  opacity: 1;
 }
 
 .family__parent-avatar {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-gold-soft), var(--color-primary-soft));
+  background: var(--color-surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 2rem;
   flex-shrink: 0;
-  border: 2px solid var(--color-border-light);
-  box-shadow: 0 0 0 3px var(--color-gold-soft);
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 0 5px rgba(200, 151, 58, 0.15);
+  transition: transform var(--duration-md);
+}
+
+.family__parent-card:hover .family__parent-avatar {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 8px rgba(200, 151, 58, 0.2);
 }
 
 .family__parent-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.family__parent-label {
+.family__parent-relation {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-gold-dark);
-  margin-bottom: 2px;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
   font-weight: 600;
 }
 
 .family__parent-name {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--color-text);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-2xs);
 }
 
-.family__parent-occupation {
-  font-size: 0.85rem;
+.family__parent-profession {
+  font-size: 0.95rem;
   color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
 }
 
 /* Siblings */
-.family__sibling-heading {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  color: var(--color-text);
-  margin-bottom: var(--space-md);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+.family__siblings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
 }
 
-.family__sibling-heading::before { content: '👫'; }
-
 .family__sibling-card {
-  background: var(--color-surface-warm);
+  background: var(--color-surface);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-xl);
   transition: all var(--duration-md) var(--ease-out);
+  position: relative;
+  padding-left: 2rem;
+}
+
+.family__sibling-card::before {
+  content: '';
+  position: absolute;
+  top: var(--space-xl);
+  bottom: var(--space-xl);
+  left: 0;
+  width: 4px;
+  background: var(--color-primary-soft);
+  border-radius: 0 4px 4px 0;
+  transition: all var(--duration-md);
 }
 
 .family__sibling-card:hover {
-  border-color: var(--color-gold);
+  border-color: var(--color-border);
   box-shadow: var(--shadow-md);
+  transform: translateX(4px);
 }
 
-.family__sibling-label {
+.family__sibling-card:hover::before {
+  background: var(--color-gold);
+}
+
+.family__sibling-relation {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-text-light);
   margin-bottom: var(--space-xs);
+  display: block;
 }
 
-.family__sibling-detail {
-  font-size: 0.88rem;
+.family__sibling-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--color-text);
-  margin-bottom: 2px;
-  font-weight: 500;
+  margin-bottom: var(--space-2xs);
+}
+
+.family__sibling-profession {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.family__sibling-status {
+  display: inline-flex;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
 }
 
 /* Family details table */
-.family__details-heading {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  color: var(--color-text);
-  margin-bottom: var(--space-md);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.family__details-heading::before { content: '🏡'; }
-
 .family__details-table {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-surface);
+  display: grid;
+  gap: 1px;
+  background: var(--color-border-light);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-sm);
 }
 
 .family__detail-row {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 0.75rem var(--space-md);
-  border-bottom: 1px solid var(--color-border-light);
+  padding: 1rem var(--space-xl);
+  background: var(--color-surface);
   transition: background var(--duration-sm) var(--ease-out);
 }
 
-.family__detail-row:last-child {
-  border-bottom: none;
-}
-
 .family__detail-row:hover {
-  background: var(--color-gold-soft);
+  background: var(--color-bg-alt);
 }
 
 .family__detail-label {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--color-text-light);
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .family__detail-value {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--color-text);
 }
 
 /* Values */
-.family__values-heading {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  color: var(--color-text);
-  margin-bottom: var(--space-md);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-.family__values-heading::before { content: '💛'; }
-
 .family__values-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-xs);
+  gap: 0.6rem;
 }
 
 .family__value-chip {
-  padding: 0.35rem 0.8rem;
-  background: linear-gradient(135deg, var(--color-gold-soft), rgba(232, 160, 176, 0.06));
-  border: 1px solid rgba(200, 151, 58, 0.15);
+  padding: 0.5rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(200, 151, 58, 0.3);
   border-radius: var(--radius-full);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--color-gold-dark);
   transition: all var(--duration-md) var(--ease-out);
   cursor: default;
-}
-
-.family__value-chip:hover {
-  background: rgba(200, 151, 58, 0.12);
-  border-color: var(--color-gold);
-  transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
 
+.family__value-chip:hover {
+  background: var(--color-gold);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 /* ── Breakpoints ─────────────────────────────────────────── */
-@media (min-width: 480px) {
+@media (min-width: 640px) {
   .family__parent-card {
     flex-direction: row;
     text-align: left;
-    gap: var(--space-xl);
-    padding: var(--space-xl);
-    border-radius: var(--radius-xl);
+    align-items: flex-start;
   }
-
-  .family__parent-avatar {
-    width: 64px;
-    height: 64px;
-    font-size: 1.8rem;
-  }
-
-  .family__parent-name {
-    font-size: 1.25rem;
+  
+  .family__parent-info {
+    align-items: flex-start;
   }
 
   .family__detail-row {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    padding: 0.9rem var(--space-xl);
   }
 
   .family__detail-value {
     text-align: right;
-    font-size: 0.92rem;
-  }
-
-  .family__value-chip {
-    padding: 0.45rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .family__values-list {
-    gap: var(--space-sm);
-  }
-
-  .family__sibling-heading,
-  .family__details-heading,
-  .family__values-heading {
-    font-size: 1.3rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .family__parents {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
-  }
-
-  .family__parent-avatar {
-    width: 72px;
-    height: 72px;
-    font-size: 2rem;
-    box-shadow: 0 0 0 4px var(--color-gold-soft);
-  }
-
-  .family__parent-name {
-    font-size: 1.3rem;
   }
 }
 
 @media (min-width: 1024px) {
   .family__content {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3xl);
+    gap: var(--space-4xl);
   }
 }
